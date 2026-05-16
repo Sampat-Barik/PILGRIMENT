@@ -1,65 +1,104 @@
-# Pilgriment: AI-Powered Smart Pilgrimage Crowd Management
+# 🏔️ Pilgriment: AI-Powered Smart Pilgrimage Crowd Management
 
-![Pilgriment Banner](https://via.placeholder.com/1200x400?text=Pilgriment+-+Smart+Crowd+Management)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/Frontend-React%2018-blue)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Build-Vite-646CFF)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20v4-38B2AC)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Backend-Python%203.9+-3776AB)](https://www.python.org/)
+[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-FF3838)](https://ultralytics.com/)
 
-**Pilgriment** is an advanced AI, IoT, and Cloud-Based Smart Pilgrimage Crowd Management System designed specifically for the Char Dham Yatra. It leverages computer vision, predictive analytics, and real-time weather tracking to ensure pilgrim safety and prevent overcrowding at sacred shrines.
-
-## 🚀 Key Features
-
-*   **Real-time AI Crowd Analysis**: Uses YOLOv8 computer vision to analyze CCTV feeds and estimate crowd density instantly.
-*   **Predictive Modeling**: Blends historical pilgrim data, seasonal trends, and real-time Open-Meteo weather forecasts to predict future footfall.
-*   **Secure Ticket Verification**: Blockchain-inspired immutable ticket generation and verification using Firebase NoSQL.
-*   **Interactive Dashboard**: A dynamic, beautiful React/Vite frontend with Framer Motion animations for administrators and authorities to monitor shrines in real-time.
-*   **Distributed Edge Architecture**: Capable of processing streams across multiple camera nodes efficiently.
-
-## 🛠️ Technology Stack
-
-**Frontend:**
-*   React 18 & TypeScript
-*   Vite
-*   Tailwind CSS (with custom tokens) & Framer Motion
-*   Lucide React for iconography
-
-**Backend & AI Engine:**
-*   Python Flask
-*   OpenCV & YOLOv8 (Ultralytics)
-*   Firebase (Firestore & Auth)
-*   Open-Meteo API for real-time weather integration
-
-## 📦 Installation & Setup
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Sampat-Barik/PILGRIMENT.git
-    cd PILGRIMENT
-    ```
-
-2.  **Environment Variables:**
-    Copy `.env.example` to `.env` and fill in your API keys:
-    ```bash
-    cp .env.example .env
-    ```
-
-3.  **Frontend Setup:**
-    ```bash
-    npm install
-    npm run dev
-    ```
-
-4.  **Backend Setup:**
-    ```bash
-    cd BACKEND
-    pip install -r requirements.txt
-    python server.py
-    ```
-
-## 🔒 Security Note
-
-All API keys and sensitive environment variables have been excluded from this repository for security purposes. Please provide your own Firebase configuration and API keys in the `.env` file to run the application locally.
-
-## 👥 Contributors
-*   **Sampat Barik** - Web Master & Technical Lead
-*   **Sayan Maity** - Team Lead
+**Pilgriment** is a state-of-the-art, AI-driven crowd management system engineered to safeguard the millions of pilgrims embarking on the **Char Dham Yatra**. By merging Computer Vision, Predictive Analytics, and Real-time Weather Intelligence, Pilgriment transforms chaotic crowd data into actionable safety insights.
 
 ---
-*Developed with a focus on human safety, using technology to safeguard the sacred journey.*
+
+## ✨ Premium Features
+
+### 👁️ Intelligent Crowd Monitoring
+*   **Real-time YOLOv8 Vision**: Edge-processed CCTV analysis that detects and counts pilgrims with precision.
+*   **Density Mapping**: Visualizes "hot zones" to prevent dangerous bottlenecking at temple entrances.
+
+### 🔮 Predictive Analytics & Forecasting
+*   **Multi-Factor Blending**: Our proprietary engine combines historical yatra trends, current flow rates, and **Open-Meteo API** weather data.
+*   **Proactive Alerts**: Predicts overcrowding *before* it happens, allowing authorities to manage flow at base camps like Sonprayag.
+
+### 🛡️ Secure Digital Ecosystem
+*   **Immutable Ticketing**: Firebase-backed secure ticket generation to prevent fraud and ensure data integrity.
+*   **Dynamic Dashboard**: A premium, high-performance React frontend featuring glassmorphism design and smooth Framer Motion animations.
+
+---
+
+## 🏗️ Technical Architecture
+
+```mermaid
+graph TD
+    A[CCTV Stream / Demo Feed] --> B[Python Flask Backend]
+    B --> C{YOLOv8 AI Engine}
+    C -->|Crowd Count| D[Real-time Analytics]
+    E[Open-Meteo API] -->|Weather Data| D
+    F[Historical JSON Data] -->|Trends| D
+    D --> G[Firebase Firestore]
+    G --> H[React Vite Frontend]
+    H --> I[Authority Dashboard]
+```
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Prerequisites
+*   Node.js (v18+)
+*   Python (v3.9+)
+*   Firebase Project (Firestore & Auth enabled)
+
+### 2. Repository Setup
+```bash
+git clone https://github.com/Sampat-Barik/PILGRIMENT.git
+cd PILGRIMENT
+```
+
+### 3. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_id
+VITE_API_BASE=http://localhost:5000
+VITE_GEMINI_API_KEY=your_gemini_key
+VITE_TAVILY_API_KEY=your_tavily_key
+```
+
+### 4. Running the Project
+**Frontend:**
+```bash
+npm install
+npm run dev
+```
+
+**Backend:**
+```bash
+cd backend
+pip install -r requirements.txt
+python server.py
+```
+
+---
+
+## 🔒 Security Note
+This repository uses environment variables for all sensitive configuration. Sample data and fallback mechanisms are provided for demonstration, but a live Firebase instance is required for full functionality.
+
+---
+
+## 👥 Contributors
+*   **Sampat Barik** - Technical Lead & System Architect
+*   **Sayan Maity** - Project Lead & Strategy
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+*Developed with ❤️ for the safety of pilgrims worldwide.*
